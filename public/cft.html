@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Function Test</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/cft.css">
+</head>
+<body>
+    <section>
+        <h1>Cognitive Function Test</h1>
+        <form id="cft-form">
+            <div class="question">
+                <label for="q1">1. What is the word for a winged animal that can fly?</label>
+                <select id="q1" name="q1" required>
+                    <option value="">Select an answer</option>
+                    <option value="bird">Bird</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="fish">Fish</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q2">2. What is the capital of France?</label>
+                <select id="q2" name="q2" required>
+                    <option value="">Select an answer</option>
+                    <option value="paris">Paris</option>
+                    <option value="london">London</option>
+                    <option value="berlin">Berlin</option>
+                    <option value="madrid">Madrid</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q3">3. What is the opposite of "up"?</label>
+                <select id="q3" name="q3" required>
+                    <option value="">Select an answer</option>
+                    <option value="down">Down</option>
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                    <option value="upside">Upside</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q4">4. What is 7 + 6?</label>
+                <select id="q4" name="q4" required>
+                    <option value="">Select an answer</option>
+                    <option value="13">13</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q5">5. Which planet is known as the Red Planet?</label>
+                <select id="q5" name="q5" required>
+                    <option value="">Select an answer</option>
+                    <option value="mars">Mars</option>
+                    <option value="venus">Venus</option>
+                    <option value="jupiter">Jupiter</option>
+                    <option value="saturn">Saturn</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q6">6. What is the color of a banana?</label>
+                <select id="q6" name="q6" required>
+                    <option value="">Select an answer</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q7">7. Name a fruit that is red.</label>
+                <select id="q7" name="q7" required>
+                    <option value="">Select an answer</option>
+                    <option value="apple">Apple</option>
+                    <option value="banana">Banana</option>
+                    <option value="orange">Orange</option>
+                    <option value="grape">Grape</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q8">8. How many days are there in a week?</label>
+                <select id="q8" name="q8" required>
+                    <option value="">Select an answer</option>
+                    <option value="seven">Seven</option>
+                    <option value="six">Six</option>
+                    <option value="eight">Eight</option>
+                    <option value="five">Five</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q9">9. What shape is a basketball?</label>
+                <select id="q9" name="q9" required>
+                    <option value="">Select an answer</option>
+                    <option value="round">Round</option>
+                    <option value="square">Square</option>
+                    <option value="triangular">Triangular</option>
+                    <option value="rectangular">Rectangular</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q10">10. What season comes after summer?</label>
+                <select id="q10" name="q10" required>
+                    <option value="">Select an answer</option>
+                    <option value="fall">Fall</option>
+                    <option value="winter">Winter</option>
+                    <option value="spring">Spring</option>
+                    <option value="autumn">Autumn</option>
+                </select>
+            </div>
+            <button type="button" onclick="submitTest()">Submit</button>
+        </form>
+        <div id="results-container"></div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Cognitive Function Test. All rights reserved.</p>
+    </footer>
+    <script src="/cft.js"></script>
+</body>
+</html>
