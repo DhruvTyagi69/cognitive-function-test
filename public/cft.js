@@ -21,9 +21,8 @@ function submitTest() {
         return response.json(); // Parse the JSON response
     })
     .then(data => {
-        // Handle the JSON data returned from the server
         console.log(data); // Example: Log the data to the console
-        displayResults(data); // Example: Display results function (to be defined)
+        displayResults(data); // Example: Display results function
     })
     .catch(error => {
         console.error('Error:', error);
@@ -34,11 +33,15 @@ function displayResults(data) {
     const resultsContainer = document.getElementById('results-container');
     resultsContainer.innerHTML = ''; // Clear previous results
 
-    const { score, incorrectAnswers } = data;
+    const { score, incorrectAnswers, mentalHealthStatus } = data;
 
     const scoreElement = document.createElement('p');
     scoreElement.textContent = `Your score: ${score}`;
     resultsContainer.appendChild(scoreElement);
+
+    const mentalHealthElement = document.createElement('p');
+    mentalHealthElement.textContent = `Mental Health Status: ${mentalHealthStatus}`;
+    resultsContainer.appendChild(mentalHealthElement);
 
     if (incorrectAnswers.length > 0) {
         const incorrectHeader = document.createElement('h2');
