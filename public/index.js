@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function submitUserInfo() {
     const formData = new FormData(document.getElementById('user-info-form'));
+    const age = formData.get('age');
+
+    if (parseInt(age) < 8) {
+        document.getElementById('error-message').textContent = 'You must be at least 8 years old to take this test.';
+        return;
+    }
 
     fetch('/user-info', {
         method: 'POST',
