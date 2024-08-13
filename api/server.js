@@ -22,14 +22,18 @@ app.get('/', (req, res) => {
 
 // Route to handle user information submission (POST request)
 app.post('/user-info', (req, res) => {
-    const { username } = req.body;
+    const { username, age } = req.body;
 
-    if (!username) {
-        return res.status(400).send('Username is required.');
+    if (!username || !age) {
+        return res.status(400).send('Username and age are required.');
+    }
+
+    if (parseInt(age) < 8) {
+        return res.status(400).send('You must be at least 8 years old to take the test.');
     }
 
     // Store user information (for demonstration)
-    userInfo = { username };
+    userInfo = { username, age };
 
     // Redirect to cognitive function test page
     res.redirect('/cft.html');
@@ -65,9 +69,24 @@ app.post('/api/submit', (req, res) => {
         }
     }
 
-    // Return JSON response with score and incorrect answers
-    res.json({ score, incorrectAnswers });
+    const mentalHealthStatus = determineMentalHealth(score);
+
+    // Return JSON response with score, incorrect answers, and mental health status
+    res.json({ score, incorrectAnswers, mentalHealthStatus });
 });
+
+// Function to determine mental health status based on the score
+function determineMentalHealth(score) {
+    if (score >= 9) {
+        return 'Excellent';
+    } else if (score >= 7) {
+        return 'Good';
+    } else if (score >= 5) {
+        return 'Fair';
+    } else {
+        return 'Poor';
+    }
+}
 
 // Start the server
 app.listen(PORT, () => {
